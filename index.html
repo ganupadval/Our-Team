@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #eid{
+            background-color: aqua;
+        }
+        .btnDiv{
+            display: flex;
+            justify-content: center;
+        }
+        .the-team {
+            height: 790px;
+            margin: 0;
+            padding: 0;
+        }
+      li {  
+            position: absolute;
+            opacity: 0;
+            cursor: crosshair;
+            z-index: 9;
+            width: 8.33333%;
+            padding: 0 0.625em 1.25em;
+            display: inline;
+            height: auto;
+            float: left;
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+          }
+        .visible-member {
+            position: relative;
+            opacity: 1;
+            top: 0 !important;
+            left: 0 !important;
+        }
+        .eye {
+            
+            width: 60px;
+            height: 60px;
+            text-indent: -9999px;
+            background-size: 660px 6300px;
+            background-image: url(/team.jpg);
+            margin: 0 auto;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            border-radius: 100%;
+        }
+        .tooltip-title {
+            font-size: 11px;
+            position: absolute;
+            white-space: nowrap;
+            top: -27px;
+            left: 10px;
+            background: #34aadc;
+            color: #fff;
+            display: none;
+            padding: 3px 10px;
+        }
+    </style>
+</head>
+
+<body style="margin:0 0; cursor: crosshair;">
+    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error tempora illo, quaerat accusantium veniam ut aperiam saepe ex fugit rem, repudiandae dicta earum, alias voluptas iste? Ad eveniet exercitationem ullam.</P>
+    
+    <div class="btnDiv">
+    <button id="ed">submit</button>
+    </div>
+    <div>
+        <ul class="team-grid the-team">
+            <li style="top: 245px; left: 261px;" class="visible-member" >
+                <figure class="eye" id="eid"></figure>
+                <strong class="tooltip-title" style="display: none;">Adrian Andrași</strong>
+            </li>
+        </ul>
+    </div>
+    <span></span>
+</body>
+<script>
+    jQuery(document).ready(function(ev) {
+
+        //get the current x and y of the mouse pointer
+
+        $(document).mousemove(function(ev){ 
+            var left = $('#eid').offset().left;
+            var width = $('#eid').outerWidth();
+            var top = $('#eid').offset().top;
+            var height = $('#eid').outerHeight();
+
+            var centerX = left + width/2;
+            var centerY = top  + height/2;
+            mouseX = ev.pageX - centerX;
+            mouseY = -ev.pageY + centerY;
+            $("span").text("X: " + mouseX + ", Y: " + mouseY); 
+            
+            var rad = Math.atan2(mouseY, mouseX); // In radians
+            var deg = rad * (180 / Math.PI);
+            $("span").text("r: " + rad +" θ : "+ deg);
+
+            if (deg<22.5 && deg>=(-22.5)){
+               var w= '-180px';
+            }
+            else if(deg<67.5 && deg>=22.5){
+               var w= '-240px';
+            }
+            else if(deg<112.5 && deg>=67.5){
+               var w= '-300px';
+            }
+            
+            else if(deg<157.5 && deg>=(112.5)){
+               var w= '-360px';
+           }
+            else if((deg<(180) && deg>=157.5) || (deg<(-157.5) && deg>=(-180))){
+                var w= '-600px';
+            }
+              
+            else if(deg<(-112.5) && deg>=(-157.5)){
+                var w= '-540px';
+            }
+            else if(deg<(-67.5) && deg>=(-112.5)){
+                var w= '-480px';
+            }
+            else if(deg<(-22.5) && deg>=(-67.5)){
+                var w= '-420px';
+            }
+            var x= w +" 6300px";
+            
+            $('#eid').css("background-position",x);
+        }); 
+    
+    });
+
+   
+</script>
+</html>
