@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import New from "./New";
 
 function App() {
@@ -51,6 +51,7 @@ function App() {
         x: e.clientX,
         y: e.clientY,
       });
+      console.log(e.clientX, e.clientY);
     };
   }, []);
 

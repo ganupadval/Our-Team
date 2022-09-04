@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 const New = ({ name, mouseCoords, Id }) => {
   const eid = useRef();
   const ref = useRef();
-  const [activePhoto, setActivePhoto] = useState(null);
+  // const [activePhoto, setActivePhoto] = useState(null);
   const [onDiv, setOnDiv] = useState(false);
 
   useEffect(() => {
@@ -79,9 +79,9 @@ const New = ({ name, mouseCoords, Id }) => {
         w = "-1150px";
       }
     }
-    let x = w + " " + "0px";
+    let x = w + " 0px";
     ref.current.style.backgroundPosition = x;
-  }, [mouseCoords]);
+  }, [mouseCoords, onDiv]);
 
   return (
     <div id="eid" ref={eid} className="">
