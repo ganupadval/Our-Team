@@ -57,26 +57,26 @@ const New = ({ name, mouseCoords, Id }) => {
     // }
     let w;
     if (onDiv) {
-      w = "15px";
+      w = "8px";
       ref.current.style.backgroundSize = "cover";
     } else {
       ref.current.style.backgroundSize = "";
       if (deg < 22.5 && deg >= -22.5) {
-        w = "-150px";
+        w = "-50px";
       } else if (deg < 67.5 && deg >= 22.5) {
-        w = "-290px";
+        w = "-108px";
       } else if (deg < 112.5 && deg >= 67.5) {
-        w = "-430px";
+        w = "-165px";
       } else if (deg < 157.5 && deg >= 112.5) {
-        w = "-590px";
+        w = "-223px";
       } else if ((deg < 180 && deg >= 157.5) || (deg < -157.5 && deg >= -180)) {
-        w = "-730px";
+        w = "-280px";
       } else if (deg < -112.5 && deg >= -157.5) {
-        w = "-860px";
+        w = "-335px";
       } else if (deg < -67.5 && deg >= -112.5) {
-        w = "-1000px";
+        w = "-395px";
       } else if (deg < -22.5 && deg >= -67.5) {
-        w = "-1150px";
+        w = "-450px";
       }
     }
     let x = w + " 0px";
@@ -100,7 +100,7 @@ const New = ({ name, mouseCoords, Id }) => {
       <div
         ref={ref}
         id={Id}
-        className="w-32 h-32 rounded-full"
+        className="w-16 h-16 rounded-full bg-cover bg-center"
         style={{ backgroundImage: `url(${name})` }}
         onMouseOver={() => setOnDiv(true)}
         onMouseLeave={() => setOnDiv(false)}
