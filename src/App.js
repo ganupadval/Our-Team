@@ -61,6 +61,12 @@ function App() {
     Pratham: "/allmembers/Pratham.jpg",
     Sagar: "/allmembers/Sagar.jpg",
     Snehal: "/allmembers/Snehal.jpg",
+    Amshitha: "/allmembers/Amshitha.jpg",
+    Aishwarya: "/allmembers/Aishwarya.jpg",
+    Harshal: "/allmembers/Harshal.jpg",
+    AthangB: "/allmembers/AthangB.jpg",
+    Atharvi: "/allmembers/Atharvi.jpg",
+    Aniket: "/allmembers/Aniket.jpg",
   };
 
   useEffect(() => {
