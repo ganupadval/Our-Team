@@ -7,24 +7,27 @@ const New = ({ name, mouseCoords, Id }) => {
   const [onDiv, setOnDiv] = useState(false);
 
   useEffect(() => {
-    let random = eid.current.getBoundingClientRect();
-    let left = random.left;
-    let width = random.width;
-    // let top = eid.current.offsetTop;
-    let top = random.top;
-    let height = random.height;
-
+    let diamentions = eid.current.getBoundingClientRect();
+    let left = diamentions.left;
+    let width = diamentions.width;
+  
+    let top = diamentions.top;
+    let height = diamentions.height;
+  
+    // fetching coordinates of element
+  
     let centerX = left + width / 2;
     let centerY = top + height / 2;
-    // console.log(centerX, centerY);
-
+   
+    // shifting origin to center of element
     let mouseX = mouseCoords.x - centerX;
     let mouseY = -(mouseCoords.y - centerY);
 
-    // console.log(ev)
+    // generating angle from coordinates
 
     let rad = Math.atan2(mouseY, mouseX); // In radians
     let deg = rad * (180 / Math.PI);
+   
     // !onDiv
     //   ? (ref.current.style.backgroundImage = `url(${name})`)
     //   : (ref.current.style.backgroundImage = `url(/Raj/front.jpeg)`);
@@ -55,6 +58,8 @@ const New = ({ name, mouseCoords, Id }) => {
     //   // eid.current.style.backgroundImage = `url(${name.buttomright})`;
     //   setActivePhoto("buttomright");
     // }
+   
+   
     let w;
     if (onDiv || (mouseCoords.x === 0 && mouseCoords.y === 0)) {
       w = "8px";
