@@ -101,7 +101,12 @@ const New = ({ name, mouseCoords, Id }) => {
         ref={ref}
         id={Id}
         className="w-16 h-16 rounded-full bg-cover bg-center"
-        style={{ backgroundImage: `url(${name})` }}
+        style={{
+          backgroundImage: `url(${name})`,
+          filter: !(onDiv || (mouseCoords.x === 0 && mouseCoords.y === 0))
+            ? "grayscale(100%)"
+            : "grayscale(0%)",
+        }}
         onMouseOver={() => setOnDiv(true)}
         onMouseLeave={() => setOnDiv(false)}
         title={Id}
