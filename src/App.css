@@ -10,6 +10,10 @@
 
 body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -49,7 +53,7 @@ body {
 
 #eid {
   /* background-image: "url(/Yash/front.jpeg)"; */
-  margin: 8px
+  margin: 8px;
 }
 .btnDiv {
   display: flex;

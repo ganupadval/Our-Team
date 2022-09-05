@@ -56,7 +56,7 @@ const New = ({ name, mouseCoords, Id }) => {
     //   setActivePhoto("buttomright");
     // }
     let w;
-    if (onDiv) {
+    if (onDiv || (mouseCoords.x === 0 && mouseCoords.y === 0)) {
       w = "8px";
       ref.current.style.backgroundSize = "cover";
     } else {

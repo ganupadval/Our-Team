@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import New from "./New";
 
 function App() {
-  const [mouseCoords, setMouseCoords] = useState(null);
+  const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });
   // const obj = {
   //   Yash: {
   //     height: "0px",
@@ -78,8 +78,8 @@ function App() {
 
   return (
     <div
-      className="flex flex-wrap justify-center items-center"
-      style={{ width:"65%", margin:"auto" }}
+      className="flex flex-wrap justify-center items-center h-fit my-auto mx-auto"
+      style={{ width: "65%" }}
     >
       {mouseCoords &&
         Object.keys(obj).map((key) => {
