@@ -49,6 +49,7 @@ body {
 
 #eid {
   /* background-image: "url(/Yash/front.jpeg)"; */
+  margin: 8px
 }
 .btnDiv {
   display: flex;

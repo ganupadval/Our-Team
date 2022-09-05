@@ -32,14 +32,35 @@ function App() {
   // };
 
   const obj = {
-    Yash: "/allmembers/Yash.jpeg",
-    Raj: "/allmembers/Raj.jpeg",
-    Dhruv: "/allmembers/Dhruv.jpeg",
-    Mrunmayee: "/allmembers/Mrunmayee.jpeg",
-    Aarushi: "/allmembers/Aarushi.jpeg",
-    Deep: "/allmembers/Deep.jpeg",
-    Manas: "/allmembers/Manas.jpeg",
-    Nirmiti: "/allmembers/Nirmiti.jpeg",
+    Yash: "/allmembers/Yash.jpg",
+    Raj: "/allmembers/Raj.jpg",
+    Dhruv: "/allmembers/Dhruv.jpg",
+    Mrunmayee: "/allmembers/Mrunmayee.jpg",
+    Aarushi: "/allmembers/Aarushi.jpg",
+    Deep: "/allmembers/Deep.jpg",
+    Manas: "/allmembers/Manas.jpg",
+    Nirmiti: "/allmembers/Nirmiti.jpg",
+    Jay: "/allmembers/Jay.jpg",
+    Prajna: "/allmembers/Prajna.jpg",
+    Saumya: "/allmembers/Saumya.jpg",
+    Akshata: "/allmembers/Akshata.jpg",
+    AthangP: "/allmembers/AthangP.jpg",
+    Tanmay: "/allmembers/Tanmay.jpg",
+    Ishika: "/allmembers/Ishika.jpg",
+    Pratik: "/allmembers/Pratik.jpg",
+    Akshay: "/allmembers/Akshay.jpg",
+    Jidnyasa: "/allmembers/Jidnyasa.jpg",
+    Prem: "/allmembers/Prem.jpg",
+    Shruti: "/allmembers/Shruti.jpg",
+    Tanushree: "/allmembers/Tanushree.jpg",
+    Saikiran: "/allmembers/Saikiran.jpg",
+    Mohan: "/allmembers/Mohan.jpg",
+    Krupa: "/allmembers/Krupa.jpg",
+    Maulya: "/allmembers/Maulya.jpg",
+    Muntzar: "/allmembers/Muntzar.jpg",
+    Pratham: "/allmembers/Pratham.jpg",
+    Sagar: "/allmembers/Sagar.jpg",
+    Snehal: "/allmembers/Snehal.jpg",
   };
 
   useEffect(() => {
@@ -57,8 +78,8 @@ function App() {
 
   return (
     <div
-      className="flex justify-center items-center space-x-4"
-      style={{ minHeight: "100vh" }}
+      className="flex flex-wrap justify-center items-center"
+      style={{ width:"65%", margin:"auto" }}
     >
       {mouseCoords &&
         Object.keys(obj).map((key) => {
