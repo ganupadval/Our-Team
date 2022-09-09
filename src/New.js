@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 
-const New = ({ name, mouseCoords, Id }) => {
+const New = ({ name, mouseCoords, Id, animationDelay }) => {
   const eid = useRef();
   const ref = useRef();
   // const [activePhoto, setActivePhoto] = useState(null);
@@ -10,15 +10,15 @@ const New = ({ name, mouseCoords, Id }) => {
     let diamentions = eid.current.getBoundingClientRect();
     let left = diamentions.left;
     let width = diamentions.width;
-  
+
     let top = diamentions.top;
     let height = diamentions.height;
-  
+
     // fetching coordinates of element
-  
+
     let centerX = left + width / 2;
     let centerY = top + height / 2;
-   
+
     // shifting origin to center of element
     let mouseX = mouseCoords.x - centerX;
     let mouseY = -(mouseCoords.y - centerY);
@@ -27,7 +27,7 @@ const New = ({ name, mouseCoords, Id }) => {
 
     let rad = Math.atan2(mouseY, mouseX); // In radians
     let deg = rad * (180 / Math.PI);
-   
+
     // !onDiv
     //   ? (ref.current.style.backgroundImage = `url(${name})`)
     //   : (ref.current.style.backgroundImage = `url(/Raj/front.jpeg)`);
@@ -58,8 +58,7 @@ const New = ({ name, mouseCoords, Id }) => {
     //   // eid.current.style.backgroundImage = `url(${name.buttomright})`;
     //   setActivePhoto("buttomright");
     // }
-   
-   
+
     let w;
     if (onDiv || (mouseCoords.x === 0 && mouseCoords.y === 0)) {
       w = "8px";
@@ -88,8 +87,10 @@ const New = ({ name, mouseCoords, Id }) => {
     ref.current.style.backgroundPosition = x;
   }, [mouseCoords, onDiv]);
 
+  console.log(animationDelay);
+
   return (
-    <div id="eid" ref={eid} className="">
+    <div ref={eid} className="eid smooth-fade-in" style={{animationDelay: `${animationDelay}s`}}>
       {/* {Object.keys(name).map((key, index) => (
         <img
           id={name}
@@ -104,17 +105,17 @@ const New = ({ name, mouseCoords, Id }) => {
       ))} */}
       <div
         ref={ref}
-        id={Id}
         className="w-16 h-16 rounded-full bg-cover bg-center"
         style={{
           backgroundImage: `url(${name})`,
+          animationDelay: `${animationDelay}s !important`,
           filter: !(onDiv || (mouseCoords.x === 0 && mouseCoords.y === 0))
             ? "grayscale(100%)"
             : "grayscale(0%)",
         }}
         onMouseOver={() => setOnDiv(true)}
         onMouseLeave={() => setOnDiv(false)}
-        title={Id}
+        data-title={Id}
       ></div>
     </div>
   );
