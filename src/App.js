@@ -1,7 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import New from "./New";
-import { motion } from "framer-motion";
+
 function App() {
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });
   // const obj = {
